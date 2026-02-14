@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Claude Code
+.claude/
+
+# 截图
+*.png
+
+# 本地文档（不上传）
+CLAUDE.md
+specs/
+agno_implementation_prompt.md
+生成模拟数据提示词.md
+泰石岩棉Agent业务系统需求设计表.md
+泰石岩棉业务调研问卷.md
+
+# 运行时生成的文件
+backend/mock-api/shipping_reports/

@@ -1,0 +1,294 @@
+{
+  "production_lines": [
+    {
+      "line_number": "A1",
+      "line_name": "A车间1号产线",
+      "equipment_list": [
+        {
+          "id": "EQ_A1_001",
+          "name": "熔炉",
+          "base_parameters": {
+            "temperature": 1280,
+            "fuel_flow": 115,
+            "air_pressure": 0.32
+          },
+          "fluctuation": {
+            "temperature": 30,
+            "fuel_flow": 5,
+            "air_pressure": 0.02
+          },
+          "normal_range": {
+            "temperature": {
+              "min": 1400,
+              "max": 1500,
+              "unit": "℃"
+            },
+            "fuel_flow": {
+              "min": 100,
+              "max": 140,
+              "unit": "m³/h"
+            },
+            "air_pressure": {
+              "min": 0.3,
+              "max": 0.4,
+              "unit": "MPa"
+            }
+          }
+        },
+        {
+          "id": "EQ_A1_002",
+          "name": "离心机",
+          "base_parameters": {
+            "speed": 5800,
+            "vibration": 2.1,
+            "bearing_temp": 65
+          },
+          "fluctuation_pct": 0.03,
+          "normal_range": {
+            "speed": {
+              "min": 5500,
+              "max": 6500,
+              "unit": "rpm"
+            },
+            "vibration": {
+              "min": 0,
+              "max": 3.0,
+              "unit": "mm/s"
+            },
+            "bearing_temp": {
+              "min": 40,
+              "max": 80,
+              "unit": "℃"
+            }
+          }
+        },
+        {
+          "id": "EQ_A1_003",
+          "name": "集棉机",
+          "base_parameters": {
+            "negative_pressure": -850,
+            "conveyor_speed": 12,
+            "cotton_thickness": 80
+          },
+          "fluctuation_pct": 0.03,
+          "normal_range": {
+            "negative_pressure": {
+              "min": -1000,
+              "max": -800,
+              "unit": "Pa"
+            },
+            "conveyor_speed": {
+              "min": 8,
+              "max": 15,
+              "unit": "m/min"
+            },
+            "cotton_thickness": {
+              "min": 60,
+              "max": 120,
+              "unit": "mm"
+            }
+          }
+        },
+        {
+          "id": "EQ_A1_004",
+          "name": "固化炉",
+          "base_parameters": {
+            "temperature": 230,
+            "conveyor_speed": 5,
+            "air_volume": 6500
+          },
+          "fluctuation_pct": 0.03,
+          "normal_range": {
+            "temperature": {
+              "min": 200,
+              "max": 250,
+              "unit": "℃"
+            },
+            "conveyor_speed": {
+              "min": 3,
+              "max": 8,
+              "unit": "m/min"
+            },
+            "air_volume": {
+              "min": 5000,
+              "max": 8000,
+              "unit": "m³/h"
+            }
+          }
+        },
+        {
+          "id": "EQ_A1_005",
+          "name": "切割机",
+          "base_parameters": {
+            "cutting_speed": 12,
+            "blade_temp": 45,
+            "positioning_accuracy": 0.5
+          },
+          "fluctuation_pct": 0.03,
+          "normal_range": {
+            "cutting_speed": {
+              "min": 10,
+              "max": 20,
+              "unit": "m/min"
+            },
+            "blade_temp": {
+              "min": 30,
+              "max": 60,
+              "unit": "℃"
+            },
+            "positioning_accuracy": {
+              "min": 0,
+              "max": 1.0,
+              "unit": "mm"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "line_number": "A2",
+      "line_name": "A车间2号产线",
+      "equipment_list": [
+        {
+          "id": "EQ_A2_001",
+          "name": "熔炉",
+          "base_parameters": {
+            "temperature": 1450,
+            "fuel_flow": 125,
+            "air_pressure": 0.35
+          },
+          "fluctuation": {
+            "temperature": 20,
+            "fuel_flow": 5,
+            "air_pressure": 0.02
+          },
+          "normal_range": {
+            "temperature": {
+              "min": 1400,
+              "max": 1500,
+              "unit": "℃"
+            },
+            "fuel_flow": {
+              "min": 100,
+              "max": 140,
+              "unit": "m³/h"
+            },
+            "air_pressure": {
+              "min": 0.3,
+              "max": 0.4,
+              "unit": "MPa"
+            }
+          }
+        },
+        {
+          "id": "EQ_A2_002",
+          "name": "离心机",
+          "base_parameters": {
+            "speed": 6000,
+            "vibration": 1.8,
+            "bearing_temp": 60
+          },
+          "fluctuation_pct": 0.03,
+          "normal_range": {
+            "speed": {
+              "min": 5500,
+              "max": 6500,
+              "unit": "rpm"
+            },
+            "vibration": {
+              "min": 0,
+              "max": 3.0,
+              "unit": "mm/s"
+            },
+            "bearing_temp": {
+              "min": 40,
+              "max": 80,
+              "unit": "℃"
+            }
+          }
+        },
+        {
+          "id": "EQ_A2_003",
+          "name": "集棉机",
+          "base_parameters": {
+            "negative_pressure": -900,
+            "conveyor_speed": 11,
+            "cotton_thickness": 85
+          },
+          "fluctuation_pct": 0.03,
+          "normal_range": {
+            "negative_pressure": {
+              "min": -1000,
+              "max": -800,
+              "unit": "Pa"
+            },
+            "conveyor_speed": {
+              "min": 8,
+              "max": 15,
+              "unit": "m/min"
+            },
+            "cotton_thickness": {
+              "min": 60,
+              "max": 120,
+              "unit": "mm"
+            }
+          }
+        },
+        {
+          "id": "EQ_A2_004",
+          "name": "固化炉",
+          "base_parameters": {
+            "temperature": 240,
+            "conveyor_speed": 5.5,
+            "air_volume": 6800
+          },
+          "fluctuation_pct": 0.03,
+          "normal_range": {
+            "temperature": {
+              "min": 200,
+              "max": 250,
+              "unit": "℃"
+            },
+            "conveyor_speed": {
+              "min": 3,
+              "max": 8,
+              "unit": "m/min"
+            },
+            "air_volume": {
+              "min": 5000,
+              "max": 8000,
+              "unit": "m³/h"
+            }
+          }
+        },
+        {
+          "id": "EQ_A2_005",
+          "name": "切割机",
+          "base_parameters": {
+            "cutting_speed": 13,
+            "blade_temp": 42,
+            "positioning_accuracy": 0.3
+          },
+          "fluctuation_pct": 0.03,
+          "normal_range": {
+            "cutting_speed": {
+              "min": 10,
+              "max": 20,
+              "unit": "m/min"
+            },
+            "blade_temp": {
+              "min": 30,
+              "max": 60,
+              "unit": "℃"
+            },
+            "positioning_accuracy": {
+              "min": 0,
+              "max": 1.0,
+              "unit": "mm"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
