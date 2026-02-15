@@ -57,5 +57,14 @@ services:
       mcp-server:
         condition: service_started
 
+  frontend:
+    build: ./frontend
+    container_name: yanmian-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      agent:
+        condition: service_started
+
 volumes:
   pgdata:

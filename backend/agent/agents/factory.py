@@ -50,9 +50,12 @@ def create_agent(name: str, instructions: str) -> Agent:
         model=model,
         tools=[mcp_tools],
         instructions=instructions,
+        db=db,
         memory_manager=memory_manager,
         add_history_to_context=True,
         num_history_runs=5,
+        read_chat_history=True,
+        store_history_messages=True,
         markdown=True,
     )
 

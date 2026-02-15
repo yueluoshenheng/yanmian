@@ -7,3 +7,5 @@ uvicorn[standard]
 httpx
 psycopg[binary]
 python-dotenv
+pyjwt>=2.8.0
+bcrypt>=4.0.0

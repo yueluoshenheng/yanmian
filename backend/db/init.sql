@@ -10,7 +10,7 @@ CREATE TABLE users (
     username      VARCHAR(50) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
     display_name  VARCHAR(100) NOT NULL,
-    role          VARCHAR(30) NOT NULL CHECK (role IN ('production_leader', 'accountant', 'manager')),
+    role          VARCHAR(30) NOT NULL CHECK (role IN ('production_leader', 'accountant', 'manager', 'logistics')),
     avatar        VARCHAR(255),
     created_at    TIMESTAMP DEFAULT NOW(),
     last_login_at TIMESTAMP
@@ -94,6 +94,7 @@ VALUES ('local', 'ollama', 'http://localhost:11434/v1', 'qwen2.5', TRUE);
 
 -- 9. 插入演示用户（开发环境，密码均为 123456 的 bcrypt 哈希）
 INSERT INTO users (username, password_hash, display_name, role) VALUES
-('zhangsan', '$2b$12$LJ3m4ys3Lk0TSwMCkVc5aOQI6MYp6.5GN.MqXqKBzRJmJz8FGxXi.', '张师傅', 'production_leader'),
-('lihui',    '$2b$12$LJ3m4ys3Lk0TSwMCkVc5aOQI6MYp6.5GN.MqXqKBzRJmJz8FGxXi.', '李会计', 'accountant'),
-('wangzhu',  '$2b$12$LJ3m4ys3Lk0TSwMCkVc5aOQI6MYp6.5GN.MqXqKBzRJmJz8FGxXi.', '王主任', 'manager');
+('zhangsan', '$2b$12$TvMc5oQ6tTkO4XjYYSPvY.3GvGEV0YhvsfD/tE6qQr7aGkVnz1JKW', '张师傅', 'production_leader'),
+('lihui',    '$2b$12$TvMc5oQ6tTkO4XjYYSPvY.3GvGEV0YhvsfD/tE6qQr7aGkVnz1JKW', '李会计', 'accountant'),
+('wangzhu',  '$2b$12$TvMc5oQ6tTkO4XjYYSPvY.3GvGEV0YhvsfD/tE6qQr7aGkVnz1JKW', '王主任', 'manager'),
+('zhaoliu',  '$2b$12$TvMc5oQ6tTkO4XjYYSPvY.3GvGEV0YhvsfD/tE6qQr7aGkVnz1JKW', '赵物流', 'logistics');
