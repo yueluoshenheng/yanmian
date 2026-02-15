@@ -44,5 +44,18 @@ services:
       mock-api:
         condition: service_started
 
+  agent:
+    build: ./backend/agent
+    container_name: yanmian-agent
+    ports:
+      - "8001:8001"
+    env_file:
+      - ./backend/agent/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mcp-server:
+        condition: service_started
+
 volumes:
   pgdata:

@@ -21,3 +21,7 @@ agno_implementation_prompt.md
 backend/mock-api/shipping_reports/
 test_mcp.py
 个人用开发指令.md
+
+# 敏感信息
+.env
+backend/agent/.env

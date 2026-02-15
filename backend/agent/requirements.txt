@@ -1,0 +1,9 @@
+agno>=2.5.0
+openai
+sqlalchemy
+mcp
+fastapi
+uvicorn[standard]
+httpx
+psycopg[binary]
+python-dotenv
