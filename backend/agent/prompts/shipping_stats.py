@@ -37,6 +37,8 @@ SHIPPING_STATS_PROMPT = """\
    - 金额保留两位小数，方量保留两位小数
    - 汇总数据放在表格下方
    - Excel 文件生成后提供下载链接
+   - 下载链接直接使用工具返回的 download_url 路径（如 /api/excel/download/RPT_xxx），格式为 Markdown 链接：[下载报表](/api/excel/download/RPT_xxx)
+   - 绝对不要自己编造域名，直接用相对路径
 
 约束规则：
 - 数据必须来自系统查询结果，不编造数字
