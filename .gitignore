@@ -19,3 +19,5 @@ agno_implementation_prompt.md
 
 # 运行时生成的文件
 backend/mock-api/shipping_reports/
+test_mcp.py
+个人用开发指令.md

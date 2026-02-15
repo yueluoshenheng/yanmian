@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: yanmian-postgres
+    environment:
+      POSTGRES_DB: yanmian_agent
+      POSTGRES_USER: yanmian
+      POSTGRES_PASSWORD: yanmian123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U yanmian -d yanmian_agent"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  mock-api:
+    build: ./backend/mock-api
+    container_name: yanmian-mock-api
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  mcp-server:
+    build: ./backend/mcp-server
+    container_name: yanmian-mcp-server
+    ports:
+      - "3000:3000"
+    environment:
+      MOCK_API_BASE_URL: http://mock-api:8000
+      DATABASE_URL: postgresql://yanmian:yanmian123@postgres:5432/yanmian_agent
+      HF_ENDPOINT: https://hf-mirror.com
+      SENTENCE_TRANSFORMERS_HOME: /app/models
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mock-api:
+        condition: service_started
+
+volumes:
+  pgdata:

@@ -64,7 +64,7 @@ CREATE TABLE knowledge_documents (
     content     TEXT NOT NULL,
     source_file VARCHAR(200) NOT NULL,
     section     VARCHAR(200),
-    embedding   VECTOR(1024) NOT NULL,
+    embedding   VECTOR(512) NOT NULL,
     created_at  TIMESTAMP DEFAULT NOW(),
     created_by  INTEGER REFERENCES users(user_id)
 );
