@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react'
-import { MessageOutlined } from '@ant-design/icons'
+import { RobotOutlined } from '@ant-design/icons'
 import { useChatStore } from '../../stores/chatStore'
+import { SCENE_LABELS } from '../../utils/constants'
 import { tokens } from '../../theme/tokens'
 import ChatMessage from './ChatMessage'
 
 export default function MessageList() {
   const messages = useChatStore((s) => s.messages)
+  const activeScene = useChatStore((s) => s.activeScene)
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -15,11 +17,9 @@ export default function MessageList() {
   if (messages.length === 0) {
     return (
       <div style={styles.empty}>
-        <MessageOutlined
-          style={{ fontSize: 48, color: tokens.textMuted, marginBottom: 16 }}
-        />
-        <p style={styles.emptyText}>开始对话</p>
-        <p style={styles.emptyHint}>输入您的问题，AI 助手将为您解答</p>
+        <RobotOutlined style={{ fontSize: 40, color: tokens.amber500, opacity: 0.5, marginBottom: 12 }} />
+        <p style={styles.emptyText}>{SCENE_LABELS[activeScene] ?? '智能助手'}</p>
+        <p style={styles.emptyHint}>选择下方常用操作或输入您的问题</p>
       </div>
     )
   }
@@ -52,7 +52,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   emptyText: {
     fontFamily: tokens.fontDisplay,
-    fontSize: '20px',
+    fontSize: '22px',
     fontWeight: 600,
     color: tokens.textSecondary,
     margin: 0,
