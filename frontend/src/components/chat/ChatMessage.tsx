@@ -1,15 +1,19 @@
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { RobotOutlined } from '@ant-design/icons'
+import { useChatStore } from '../../stores/chatStore'
 import { tokens } from '../../theme/tokens'
 import type { ChatMessage as ChatMessageType } from '../../stores/chatStore'
 
 interface Props {
   message: ChatMessageType
+  isLast?: boolean
 }
 
-export default function ChatMessage({ message }: Props) {
+export default function ChatMessage({ message, isLast }: Props) {
   const isUser = message.role === 'user'
+  const isLoading = useChatStore((s) => s.isLoading)
+  const showCursor = isLast && !isUser && isLoading
 
   if (isUser) {
     return (
@@ -32,6 +36,7 @@ export default function ChatMessage({ message }: Props) {
       <div style={styles.assistantContent}>
         <div className="markdown-body">
           <Markdown remarkPlugins={[remarkGfm]}>{message.content || '...'}</Markdown>
+          {showCursor && <span className="typing-cursor" />}
         </div>
         <span style={styles.assistantTimestamp}>
           {formatTime(message.timestamp)}

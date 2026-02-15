@@ -26,8 +26,8 @@ export default function MessageList() {
 
   return (
     <div style={styles.container}>
-      {messages.map((msg) => (
-        <ChatMessage key={msg.id} message={msg} />
+      {messages.map((msg, i) => (
+        <ChatMessage key={msg.id} message={msg} isLast={i === messages.length - 1} />
       ))}
       <div ref={bottomRef} />
     </div>

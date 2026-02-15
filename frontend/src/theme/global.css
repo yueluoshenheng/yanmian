@@ -195,3 +195,18 @@ a, button, input, .ant-btn, .ant-card, .ant-menu-item {
   border-top: 1px solid #2A3040;
   margin: 12px 0;
 }
+
+/* Typing cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #E8913A;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 0.8s ease infinite;
+}
